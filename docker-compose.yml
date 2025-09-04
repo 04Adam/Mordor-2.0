@@ -32,14 +32,6 @@ services:
       - IS_PERSISTENT=TRUE
       - PERSIST_DIRECTORY=/chroma/chroma
     volumes:
-      - chroma_data:/chroma
+      - ./Embeddings/chroma_data:/chroma
     networks:
       - app_network
-
-volumes:
-  chroma_data:
-  db:  # This was implicitly created by your original volume mount
-
-networks:
-  app_network:
-    driver: bridge
